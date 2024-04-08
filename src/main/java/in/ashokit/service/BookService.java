@@ -9,4 +9,6 @@ public interface BookService {
 	public List<Book> retrieve();
 	
 	public boolean saveData(Book book);
+	
+	public void deleteBook(Integer bookId);
 }

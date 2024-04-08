@@ -20,9 +20,14 @@ public class BookServiceImpl implements BookService{
 	public List<Book> retrieve() {
 		return (List<Book>) bookRepo.findAll();
 	}
-	
+
 	@Override
 	public boolean saveData(Book book) {
 		return bookRepo.save(book) != null;
+	}
+
+	@Override
+	public void deleteBook(Integer bookId) {
+		bookRepo.deleteById(bookId);
 	}
 }
