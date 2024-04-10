@@ -13,6 +13,7 @@ public class Book {
 	private Integer bookId;
 	private String bookName;
 	private Integer bookPrice;
+	private String activeSW;
 	
 	public Integer getBookId() {
 		return bookId;
@@ -32,9 +33,16 @@ public class Book {
 	public void setBookPrice(Integer bookPrice) {
 		this.bookPrice = bookPrice;
 	}
+	public String getActiveSW() {
+		return activeSW;
+	}
+	public void setActiveSW(String activeSW) {
+		this.activeSW = activeSW;
+	}
 	
 	@Override
 	public String toString() {
-		return "Book [bookId=" + bookId + ", bookName=" + bookName + ", bookPrice=" + bookPrice + "]";
+		return "Book [bookId=" + bookId + ", bookName=" + bookName + ", bookPrice=" + bookPrice + ", activeSW="
+				+ activeSW + "]";
 	}
 }

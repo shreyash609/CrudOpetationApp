@@ -44,7 +44,8 @@ public class BookController {
 
 	@PostMapping("/save")
 	public ModelAndView saveData(Book book) {
-
+ 
+		
 		ModelAndView mav=new ModelAndView();
 		boolean saveData = bookService.saveData(book);
 		if(saveData) {
@@ -57,30 +58,18 @@ public class BookController {
 
 		return mav;
 	}
-	
-	
+
 	@GetMapping("/delete")
 	public ModelAndView deleteBook(@RequestParam("bookId") Integer BookId) {
-		
+
 		bookService.deleteBook(BookId);
-		
+
 		ModelAndView mav=new ModelAndView();
-		
+
 		List<Book> retrieve = bookService.retrieve();
 		mav.addObject("book",retrieve);
 		mav.setViewName("index");
-		
+
 		return mav;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

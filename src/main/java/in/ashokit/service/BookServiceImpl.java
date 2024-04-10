@@ -1,6 +1,7 @@
 package in.ashokit.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -18,16 +19,24 @@ public class BookServiceImpl implements BookService{
 	
 	@Override
 	public List<Book> retrieve() {
-		return (List<Book>) bookRepo.findAll();
+		return bookRepo.findByActiveSW("Y");
+		
 	}
 
 	@Override
 	public boolean saveData(Book book) {
+		book.setActiveSW("Y");
 		return bookRepo.save(book) != null;
 	}
 
 	@Override
 	public void deleteBook(Integer bookId) {
-		bookRepo.deleteById(bookId);
+		Optional<Book> findById = bookRepo.findById(bookId);
+		if(findById.isPresent()) {
+			Book book = findById.get();
+			book.setActiveSW("N");
+			bookRepo.save(book);
+		}
+		
 	}
 }
