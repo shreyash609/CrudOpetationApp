@@ -11,4 +11,6 @@ public interface BookService {
 	public boolean saveData(Book book);
 	
 	public void deleteBook(Integer bookId);
+	
+	public Book getBookId(Integer BookId);
 }

@@ -37,7 +37,7 @@
 					<td th:text="${b.bookName}"></td>
 					<td th:text="${b.bookPrice}"></td>
 					<td>
-						<a href="#" class="btn btn-secondary">Edit</a>
+						<a th:href="@{/update?(bookId=${b.bookId})}" class="btn btn-secondary">Edit</a>
 						<a th:href="@{/delete?(bookId=${b.bookId})}" 
 						class="btn btn-danger" 
 						onclick="return confirmDelete()">Delete</a>

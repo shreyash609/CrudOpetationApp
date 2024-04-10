@@ -39,4 +39,20 @@ public class BookServiceImpl implements BookService{
 		}
 		
 	}
+
+	@Override
+	public Book getBookId(Integer BookId) {
+		Optional<Book> findById = bookRepo.findById(BookId);
+		if(findById.isPresent()) {
+			return findById.get();
+		}
+		return null;
+	}
 }
+
+
+
+
+
+
+

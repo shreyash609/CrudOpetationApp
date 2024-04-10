@@ -45,7 +45,6 @@ public class BookController {
 	@PostMapping("/save")
 	public ModelAndView saveData(Book book) {
  
-		
 		ModelAndView mav=new ModelAndView();
 		boolean saveData = bookService.saveData(book);
 		if(saveData) {
@@ -72,4 +71,33 @@ public class BookController {
 
 		return mav;
 	}
+	
+	@GetMapping("/update")
+	public ModelAndView update(@RequestParam("bookId") Integer bookId) {
+		
+		ModelAndView mav=new ModelAndView();
+		Book book = bookService.getBookId(bookId);
+		mav.addObject("book",book);
+		mav.setViewName("form");
+		return mav;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
