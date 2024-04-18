@@ -80,24 +80,5 @@ public class BookController {
 		mav.addObject("book",book);
 		mav.setViewName("form");
 		return mav;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
